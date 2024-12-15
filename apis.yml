@@ -17,12 +17,12 @@ apis:
 name: Capital One
 tags:
   - Credit Cards
-type: Index
+type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-15'
-modified: '2024-11-15'
-position: Consumer
+modified: '2024-12-15'
+position: Consuming
 description: >-
   DevExchange is your portal to our trusted API solutions. With security in
   mind, we provide the reliable data and integration support for your digital
