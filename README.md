@@ -16,7 +16,7 @@ DevExchange is your portal to our trusted API solutions. With security in mind, 
 ## Timestamps
 
 - **Created:** 2024-11-15 
-- **Modified:** 2024-12-15 
+- **Modified:** 2024-12-22 
 
 ## APIs
 
@@ -24,6 +24,7 @@ DevExchange is your portal to our trusted API solutions. With security in mind, 
 DevExchange is your portal to our trusted API solutions. With security in mind, we provide the reliable data and integration support for your digital products.
 
 **Human URL:** [https://developer.capitalone.com/](https://developer.capitalone.com/)
+r
 
 #### Tags
 
