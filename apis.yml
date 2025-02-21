@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-search/capital-one/refs/heads/main/apis.yml
 apis:
   - aid: capital-one:account-lookup-api
-    name: Account Lookup API
+    name: Capital One Account Lookup API
     tags: []
     humanURL: https://developer.capitalone.com/products/account-lookup?id=24064-1
     properties: []
@@ -12,13 +12,13 @@ apis:
       account info when they dont have their Capital One-issued store card with
       them.
   - aid: capital-one:authorizations-api
-    name: Authorizations API
+    name: Capital One Authorizations API
     tags: []
     humanURL: https://developer.capitalone.com/products/authorizations?id=658618-1
     properties: []
     description: Directly authorize your customers transactions with Capital One.
   - aid: capital-one:credit-offers-api
-    name: Credit Offers API
+    name: Capital One Credit Offers API
     tags: []
     humanURL: https://developer.capitalone.com/products/credit-offers?id=3105-3
     properties: []
@@ -26,7 +26,7 @@ apis:
       Get a personalized list of Capital One credit offers for your customers,
       within 60 seconds.
   - aid: capital-one:customer-transactions
-    name: Customer Transactions
+    name: Capital One Customer Transactions
     tags: []
     humanURL: https://developer.capitalone.com/products/customer-transactions?id=3313-1
     properties: []
@@ -35,7 +35,9 @@ apis:
       how and when their transaction data is shared.
   - aid: >-
       capital-one:data-protection-and-client-authentication-public-key-sharing-api
-    name: Data Protection and Client Authentication Public Key Sharing API
+    name: >-
+      Capital One Data Protection and Client Authentication Public Key Sharing
+      API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1
@@ -44,21 +46,21 @@ apis:
       Use industry standard public keys to protect sensitive data and client
       identities.
   - aid: capital-one:digital-auto-financing-credit-application-api
-    name: Digital Auto Financing Credit Application API
+    name: Capital One Digital Auto Financing Credit Application API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/digital-auto-financing-credit-application?id=647907-1
     properties: []
     description: Submit online auto finance credit applications.
   - aid: capital-one:enhanced-decisioning-data-api
-    name: Enhanced Decisioning Data API
+    name: Capital One Enhanced Decisioning Data API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/enhanced-decisioning-data?id=23343-1
     properties: []
     description: Share additional data to minimize false declines and fraud
   - aid: capital-one:in-store-credit-card-payments-api
-    name: In-Store Credit Card Payments API
+    name: Capital One In-Store Credit Card Payments API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2
@@ -67,7 +69,7 @@ apis:
       Allow partnerships credit card customers to make a payment towards their
       credit card account balance in-store.
   - aid: capital-one:pos-credit-card-application-api
-    name: POS Credit Card Application API
+    name: Capital One POS Credit Card Application API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1
@@ -77,7 +79,7 @@ apis:
       terminal or connected middleware and get real-time offers for approved
       customers.
   - aid: capital-one:partner-account-summary-api
-    name: Partner Account Summary API
+    name: Capital One Partner Account Summary API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/partner-account-summary?id=18757-1
@@ -86,7 +88,7 @@ apis:
       Display account-level information to enable customer servicing directly on
       your site or app.
   - aid: capital-one:pre-application-orchestrator-api
-    name: Pre-Application Orchestrator API
+    name: Capital One Pre-Application Orchestrator API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1
@@ -95,7 +97,7 @@ apis:
       Streamline credit card applications by capturing and pre-filling with
       customers details.
   - aid: capital-one:real-time-proactive-prescreen-api
-    name: Real-Time Proactive Prescreen API
+    name: Capital One Real-Time Proactive Prescreen API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1
@@ -104,14 +106,14 @@ apis:
       Easily check if your customers are eligible for prescreened credit card
       offers.
   - aid: capital-one:retrieve-consumer-bank-products-api
-    name: Retrieve Consumer Bank Products API
+    name: Capital One Retrieve Consumer Bank Products API
     tags: []
     humanURL: >-
       https://developer.capitalone.com/products/retrieve-consumer-bank-products?id=1359-5
     properties: []
     description: Get real-time rate and feature updates on our consumer bank products.
   - aid: capital-one:shop-with-rewards-api
-    name: Shop with Rewards API
+    name: Capital One Shop with Rewards API
     tags: []
     humanURL: https://developer.capitalone.com/products/shop-with-rewards?id=637511-1
     properties: []
