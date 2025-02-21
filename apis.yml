@@ -289,26 +289,29 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
-  - name: Capital One DevExchange
-    description: 'null'
-    url: https://developer.capitalone.com/documentation/getting-started
+  - url: https://developer.capitalone.com/documentation/getting-started
+    name: Capital One DevExchange
     type: GettingStarted
-  - name: Capital One DevExchange
     description: 'null'
-    url: https://developer.capitalone.com/documentation/o-auth
+  - url: https://developer.capitalone.com/documentation/o-auth
+    name: Capital One DevExchange
     type: OAuth20
-  - name: Capital One DevExchange
     description: 'null'
-    url: https://developer.capitalone.com/documentation/sandbox
+  - url: https://developer.capitalone.com/documentation/sandbox
+    name: Capital One DevExchange
     type: Sandbox
-  - name: Capital One DevExchange
     description: 'null'
-    url: https://developer.capitalone.com/help/faq
+  - url: https://developer.capitalone.com/help/faq
+    name: Capital One DevExchange
     type: FAQ
-  - name: Capital One DevExchange
     description: 'null'
-    url: https://developer.capitalone.com/help/tickets
+  - url: https://developer.capitalone.com/help/tickets
+    name: Capital One DevExchange
     type: Support
+    description: 'null'
+  - name: GitHub Organization
+    url: https://github.com/capitalone
+    type: GitHubOrganization
 created: '2024-11-15'
 modified: '2025-02-20'
 position: Consuming
