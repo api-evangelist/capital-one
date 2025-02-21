@@ -7,8 +7,8 @@ apis:
     tags: []
     humanURL: https://developer.capitalone.com/products/account-lookup?id=24064-1
     properties:
-      - type: Documentation
-        url: https://developer.capitalone.com/products/account-lookup?id=24064-1
+      - url: https://developer.capitalone.com/products/account-lookup?id=24064-1
+        type: Documentation
     description: >-
       The Capital One Account Lookup API is a tool designed to help users easily
       access and retrieve information about their accounts with Capital One. By
@@ -26,8 +26,8 @@ apis:
     tags: []
     humanURL: https://developer.capitalone.com/products/authorizations?id=658618-1
     properties:
-      - type: Documentation
-        url: https://developer.capitalone.com/documentation/o-auth
+      - url: https://developer.capitalone.com/documentation/o-auth
+        type: Documentation
     description: >-
       Capital One Authorizations API allows developers to programmatically
       verify and authorize financial transactions using Capital One's secure
@@ -43,8 +43,8 @@ apis:
     tags: []
     humanURL: https://developer.capitalone.com/products/credit-offers?id=3105-3
     properties:
-      - type: Documentation
-        url: https://developer.capitalone.com/products/credit-offers?id=3105-3
+      - url: https://developer.capitalone.com/products/credit-offers?id=3105-3
+        type: Documentation
     description: >-
       The Capital One Credit Offers API provides developers with access to a
       wide range of credit card offers from Capital One. This API allows users
@@ -61,9 +61,9 @@ apis:
     tags: []
     humanURL: https://developer.capitalone.com/products/customer-transactions?id=3313-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/customer-transactions?id=3313-1
+        type: Documentation
     description: >-
       Capital One Customer Transactions is a division of the financial services
       company Capital One that focuses on managing and processing customer
@@ -84,9 +84,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1
+        type: Documentation
     description: >-
       The Capital One Data Protection and Client Authentication Public Key
       Sharing API is a secure and efficient solution for encrypting and
@@ -104,9 +104,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/digital-auto-financing-credit-application?id=647907-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/digital-auto-financing-credit-application?id=647907-1
+        type: Documentation
     description: >-
       The Capital One Digital Auto Financing Credit Application API is a tool
       that allows users to seamlessly apply for auto financing through Capital
@@ -124,9 +124,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/enhanced-decisioning-data?id=23343-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/documentation/enhanced-decisioning-data
+        type: Documentation
     description: >-
       Capital One Enhanced Decisioning Data API is a powerful tool that provides
       users with access to a vast array of data that can help them make
@@ -145,9 +145,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2
+        type: Documentation
     description: >-
       The Capital One In-Store Credit Card Payments API is a tool that allows
       merchants to process credit card payments directly within their physical
@@ -166,9 +166,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1
+        type: Documentation
     description: >-
       The Capital One POS Credit Card Application API is a tool that enables
       merchants to seamlessly integrate credit card application processes into
@@ -187,9 +187,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/partner-account-summary?id=18757-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/partner-account-summary?id=18757-1
+        type: Documentation
     description: >-
       The Capital One Partner Account Summary API provides secure and efficient
       access to account summary information for Capital One customers. This API
@@ -208,9 +208,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1
+        type: Documentation
     description: >-
       The Capital One Pre-Application Orchestrator API is a tool designed to
       streamline the application process for financial products such as loans
@@ -228,9 +228,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1
+        type: Documentation
     description: >-
       The Capital One Real-Time Proactive Prescreen API is a powerful tool that
       allows businesses to accurately assess creditworthiness in real-time. This
@@ -248,9 +248,9 @@ apis:
     humanURL: >-
       https://developer.capitalone.com/products/retrieve-consumer-bank-products?id=1359-5
     properties:
-      - type: Documentation
-        url: >-
+      - url: >-
           https://developer.capitalone.com/documentation/retrieve-consumer-bank-products
+        type: Documentation
     description: >-
       Capital One Retrieve Consumer Bank Products API is a tool that allows
       developers to access information about a consumer's bank products, such as
@@ -269,8 +269,8 @@ apis:
     tags: []
     humanURL: https://developer.capitalone.com/products/shop-with-rewards?id=637511-1
     properties:
-      - type: Documentation
-        url: https://developer.capitalone.com/products/shop-with-rewards
+      - url: https://developer.capitalone.com/products/shop-with-rewards
+        type: Documentation
     description: >-
       The Capital One Shop with Rewards API is a platform that allows users to
       seamlessly integrate reward points and benefits from their Capital One
@@ -288,7 +288,27 @@ tags:
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
-common: []
+common:
+  - name: Capital One DevExchange
+    description: 'null'
+    url: https://developer.capitalone.com/documentation/getting-started
+    type: GettingStarted
+  - name: Capital One DevExchange
+    description: 'null'
+    url: https://developer.capitalone.com/documentation/o-auth
+    type: OAuth20
+  - name: Capital One DevExchange
+    description: 'null'
+    url: https://developer.capitalone.com/documentation/sandbox
+    type: Sandbox
+  - name: Capital One DevExchange
+    description: 'null'
+    url: https://developer.capitalone.com/help/faq
+    type: FAQ
+  - name: Capital One DevExchange
+    description: 'null'
+    url: https://developer.capitalone.com/help/tickets
+    type: Support
 created: '2024-11-15'
 modified: '2025-02-20'
 position: Consuming
