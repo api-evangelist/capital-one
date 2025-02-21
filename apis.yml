@@ -2,140 +2,129 @@ aid: capital-one
 url: >-
   https://raw.githubusercontent.com/api-search/capital-one/refs/heads/main/apis.yml
 apis:
-  - aid: capital-one:capital-one
-    name: Capital One
-    tags:
-      - API
-    humanURL: https://developer.capitalone.com/
-    properties:
-      - url: https://developer.capitalone.com/
-        type: Documentation
-    description: >-
-      DevExchange is your portal to our trusted API solutions. With security in
-      mind, we provide the reliable data and integration support for your
-      digital products.
   - aid: capital-one:account-lookup-api
     name: Account Lookup API
+    tags: []
+    humanURL: https://developer.capitalone.com/products/account-lookup?id=24064-1
+    properties: []
     description: >-
       With this API, your retail associates can quickly look up a customers
       account info when they dont have their Capital One-issued store card with
       them.
-    humanURL: https://developer.capitalone.com/products/account-lookup?id=24064-1
-    tags: []
-    properties: []
   - aid: capital-one:authorizations-api
     name: Authorizations API
-    description: Directly authorize your customers transactions with Capital One.
-    humanURL: https://developer.capitalone.com/products/authorizations?id=658618-1
     tags: []
+    humanURL: https://developer.capitalone.com/products/authorizations?id=658618-1
     properties: []
+    description: Directly authorize your customers transactions with Capital One.
   - aid: capital-one:credit-offers-api
     name: Credit Offers API
+    tags: []
+    humanURL: https://developer.capitalone.com/products/credit-offers?id=3105-3
+    properties: []
     description: >-
       Get a personalized list of Capital One credit offers for your customers,
       within 60 seconds.
-    humanURL: https://developer.capitalone.com/products/credit-offers?id=3105-3
-    tags: []
-    properties: []
   - aid: capital-one:customer-transactions
     name: Customer Transactions
+    tags: []
+    humanURL: https://developer.capitalone.com/products/customer-transactions?id=3313-1
+    properties: []
     description: >-
       Enhances data sharing security while giving your customers control over
       how and when their transaction data is shared.
-    humanURL: https://developer.capitalone.com/products/customer-transactions?id=3313-1
-    tags: []
-    properties: []
   - aid: >-
       capital-one:data-protection-and-client-authentication-public-key-sharing-api
     name: Data Protection and Client Authentication Public Key Sharing API
+    tags: []
+    humanURL: >-
+      https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1
+    properties: []
     description: >-
       Use industry standard public keys to protect sensitive data and client
       identities.
-    humanURL: >-
-      https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1
-    tags: []
-    properties: []
   - aid: capital-one:digital-auto-financing-credit-application-api
     name: Digital Auto Financing Credit Application API
-    description: Submit online auto finance credit applications.
+    tags: []
     humanURL: >-
       https://developer.capitalone.com/products/digital-auto-financing-credit-application?id=647907-1
-    tags: []
     properties: []
+    description: Submit online auto finance credit applications.
   - aid: capital-one:enhanced-decisioning-data-api
     name: Enhanced Decisioning Data API
-    description: Share additional data to minimize false declines and fraud
+    tags: []
     humanURL: >-
       https://developer.capitalone.com/products/enhanced-decisioning-data?id=23343-1
-    tags: []
     properties: []
+    description: Share additional data to minimize false declines and fraud
   - aid: capital-one:in-store-credit-card-payments-api
     name: In-Store Credit Card Payments API
+    tags: []
+    humanURL: >-
+      https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2
+    properties: []
     description: >-
       Allow partnerships credit card customers to make a payment towards their
       credit card account balance in-store.
-    humanURL: >-
-      https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2
-    tags: []
-    properties: []
   - aid: capital-one:pos-credit-card-application-api
     name: POS Credit Card Application API
+    tags: []
+    humanURL: >-
+      https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1
+    properties: []
     description: >-
       Allow your customers to submit credit card applications through a POS
       terminal or connected middleware and get real-time offers for approved
       customers.
-    humanURL: >-
-      https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1
-    tags: []
-    properties: []
   - aid: capital-one:partner-account-summary-api
     name: Partner Account Summary API
+    tags: []
+    humanURL: >-
+      https://developer.capitalone.com/products/partner-account-summary?id=18757-1
+    properties: []
     description: >-
       Display account-level information to enable customer servicing directly on
       your site or app.
-    humanURL: >-
-      https://developer.capitalone.com/products/partner-account-summary?id=18757-1
-    tags: []
-    properties: []
   - aid: capital-one:pre-application-orchestrator-api
     name: Pre-Application Orchestrator API
+    tags: []
+    humanURL: >-
+      https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1
+    properties: []
     description: >-
       Streamline credit card applications by capturing and pre-filling with
       customers details.
-    humanURL: >-
-      https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1
-    tags: []
-    properties: []
   - aid: capital-one:real-time-proactive-prescreen-api
     name: Real-Time Proactive Prescreen API
+    tags: []
+    humanURL: >-
+      https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1
+    properties: []
     description: >-
       Easily check if your customers are eligible for prescreened credit card
       offers.
-    humanURL: >-
-      https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1
-    tags: []
-    properties: []
   - aid: capital-one:retrieve-consumer-bank-products-api
     name: Retrieve Consumer Bank Products API
-    description: Get real-time rate and feature updates on our consumer bank products.
+    tags: []
     humanURL: >-
       https://developer.capitalone.com/products/retrieve-consumer-bank-products?id=1359-5
-    tags: []
     properties: []
+    description: Get real-time rate and feature updates on our consumer bank products.
   - aid: capital-one:shop-with-rewards-api
     name: Shop with Rewards API
+    tags: []
+    humanURL: https://developer.capitalone.com/products/shop-with-rewards?id=637511-1
+    properties: []
     description: >-
       Streamline the customer rewards experience, including lookup, redemption
       and refund.
-    humanURL: https://developer.capitalone.com/products/shop-with-rewards?id=637511-1
-    tags: []
-    properties: []
 name: Capital One
 tags:
   - Credit Cards
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
+common: []
 created: '2024-11-15'
 modified: '2025-02-20'
 position: Consuming
@@ -154,4 +143,3 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
-common: []
