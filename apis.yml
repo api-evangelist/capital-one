@@ -14,6 +14,122 @@ apis:
       DevExchange is your portal to our trusted API solutions. With security in
       mind, we provide the reliable data and integration support for your
       digital products.
+  - aid: capital-one:account-lookup-api
+    name: Account Lookup API
+    description: >-
+      With this API, your retail associates can quickly look up a customers
+      account info when they dont have their Capital One-issued store card with
+      them.
+    humanURL: https://developer.capitalone.com/products/account-lookup?id=24064-1
+    tags: []
+    properties: []
+  - aid: capital-one:authorizations-api
+    name: Authorizations API
+    description: Directly authorize your customers transactions with Capital One.
+    humanURL: https://developer.capitalone.com/products/authorizations?id=658618-1
+    tags: []
+    properties: []
+  - aid: capital-one:credit-offers-api
+    name: Credit Offers API
+    description: >-
+      Get a personalized list of Capital One credit offers for your customers,
+      within 60 seconds.
+    humanURL: https://developer.capitalone.com/products/credit-offers?id=3105-3
+    tags: []
+    properties: []
+  - aid: capital-one:customer-transactions
+    name: Customer Transactions
+    description: >-
+      Enhances data sharing security while giving your customers control over
+      how and when their transaction data is shared.
+    humanURL: https://developer.capitalone.com/products/customer-transactions?id=3313-1
+    tags: []
+    properties: []
+  - aid: >-
+      capital-one:data-protection-and-client-authentication-public-key-sharing-api
+    name: Data Protection and Client Authentication Public Key Sharing API
+    description: >-
+      Use industry standard public keys to protect sensitive data and client
+      identities.
+    humanURL: >-
+      https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1
+    tags: []
+    properties: []
+  - aid: capital-one:digital-auto-financing-credit-application-api
+    name: Digital Auto Financing Credit Application API
+    description: Submit online auto finance credit applications.
+    humanURL: >-
+      https://developer.capitalone.com/products/digital-auto-financing-credit-application?id=647907-1
+    tags: []
+    properties: []
+  - aid: capital-one:enhanced-decisioning-data-api
+    name: Enhanced Decisioning Data API
+    description: Share additional data to minimize false declines and fraud
+    humanURL: >-
+      https://developer.capitalone.com/products/enhanced-decisioning-data?id=23343-1
+    tags: []
+    properties: []
+  - aid: capital-one:in-store-credit-card-payments-api
+    name: In-Store Credit Card Payments API
+    description: >-
+      Allow partnerships credit card customers to make a payment towards their
+      credit card account balance in-store.
+    humanURL: >-
+      https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2
+    tags: []
+    properties: []
+  - aid: capital-one:pos-credit-card-application-api
+    name: POS Credit Card Application API
+    description: >-
+      Allow your customers to submit credit card applications through a POS
+      terminal or connected middleware and get real-time offers for approved
+      customers.
+    humanURL: >-
+      https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1
+    tags: []
+    properties: []
+  - aid: capital-one:partner-account-summary-api
+    name: Partner Account Summary API
+    description: >-
+      Display account-level information to enable customer servicing directly on
+      your site or app.
+    humanURL: >-
+      https://developer.capitalone.com/products/partner-account-summary?id=18757-1
+    tags: []
+    properties: []
+  - aid: capital-one:pre-application-orchestrator-api
+    name: Pre-Application Orchestrator API
+    description: >-
+      Streamline credit card applications by capturing and pre-filling with
+      customers details.
+    humanURL: >-
+      https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1
+    tags: []
+    properties: []
+  - aid: capital-one:real-time-proactive-prescreen-api
+    name: Real-Time Proactive Prescreen API
+    description: >-
+      Easily check if your customers are eligible for prescreened credit card
+      offers.
+    humanURL: >-
+      https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1
+    tags: []
+    properties: []
+  - aid: capital-one:retrieve-consumer-bank-products-api
+    name: Retrieve Consumer Bank Products API
+    description: Get real-time rate and feature updates on our consumer bank products.
+    humanURL: >-
+      https://developer.capitalone.com/products/retrieve-consumer-bank-products?id=1359-5
+    tags: []
+    properties: []
+  - aid: capital-one:shop-with-rewards-api
+    name: Shop with Rewards API
+    description: >-
+      Streamline the customer rewards experience, including lookup, redemption
+      and refund.
+    humanURL: https://developer.capitalone.com/products/shop-with-rewards?id=637511-1
+    tags: []
+    properties: []
 name: Capital One
 tags:
   - Credit Cards
@@ -21,13 +137,21 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-15'
-modified: '2024-12-22'
+modified: '2025-02-20'
 position: Consuming
 description: >-
-  DevExchange is your portal to our trusted API solutions. With security in
-  mind, we provide the reliable data and integration support for your digital
-  products.
+  Capital One is a financial services company that offers a wide range of
+  banking products and services, including credit cards, checking and savings
+  accounts, loans, and investment products. They are known for their innovative
+  approach to banking, using technology to provide convenient and personalized
+  banking experiences for their customers. Capital One is also a major player in
+  the credit card industry, offering rewards programs and perks to their
+  cardholders. Additionally, they provide financial education resources and
+  tools to help customers better manage their finances. Overall, Capital One
+  aims to help people achieve their financial goals and improve their financial
+  well-being.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
+common: []
