@@ -1,4 +1,4 @@
-executed: '2025-02-21T01:43:42.334Z'
+executed: '2025-02-24T23:47:35.635Z'
 results:
   - code: apis-json-specification-aid-info
     message: There is an aid.
@@ -1899,8 +1899,8 @@ results:
         line: 290
         character: 7
       end:
-        line: 310
-        character: 23
+        line: 313
+        character: 28
   - code: apis-json-apis-properties-url-info
     message: Property URLs Are Valid
     path:
@@ -1999,10 +1999,12 @@ results:
       end:
         line: 309
         character: 17
-  - code: apis-json-created-info
-    message: There is a created date.
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
     path:
-      - created
+      - common
+      - '5'
+      - url
     severity: 2
     range:
       start:
@@ -2010,6 +2012,32 @@ results:
         character: 9
       end:
         line: 311
+        character: 38
+  - code: apis-json-apis-properties-github-organization-info
+    message: Has a GitHub Organization
+    path:
+      - common
+      - '5'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 313
+        character: 10
+      end:
+        line: 313
+        character: 28
+  - code: apis-json-created-info
+    message: There is a created date.
+    path:
+      - created
+    severity: 2
+    range:
+      start:
+        line: 314
+        character: 9
+      end:
+        line: 314
         character: 21
   - code: apis-json-modified-info
     message: There is a modified date.
@@ -2018,10 +2046,10 @@ results:
     severity: 2
     range:
       start:
-        line: 312
+        line: 315
         character: 10
       end:
-        line: 312
+        line: 315
         character: 22
   - code: apis-json-description-info
     message: There is a description.
@@ -2030,10 +2058,10 @@ results:
     severity: 2
     range:
       start:
-        line: 314
+        line: 317
         character: 13
       end:
-        line: 324
+        line: 327
         character: 13
   - code: apis-json-maintainers-info
     message: There is a maintainer object.
@@ -2042,10 +2070,10 @@ results:
     severity: 2
     range:
       start:
-        line: 325
+        line: 328
         character: 12
       end:
-        line: 327
+        line: 330
         character: 33
   - code: apis-json-maintainers-fn-info
     message: There is a FN property for maintainers.
@@ -2056,10 +2084,10 @@ results:
     severity: 2
     range:
       start:
-        line: 326
+        line: 329
         character: 8
       end:
-        line: 326
+        line: 329
         character: 16
   - code: apis-json-maintainers-email-info
     message: There is a email property for maintainers.
@@ -2070,10 +2098,10 @@ results:
     severity: 2
     range:
       start:
-        line: 327
+        line: 330
         character: 11
       end:
-        line: 327
+        line: 330
         character: 33
   - code: apis-json-specification-version-info
     message: There is a specification version.
@@ -2082,8 +2110,8 @@ results:
     severity: 2
     range:
       start:
-        line: 328
+        line: 331
         character: 22
       end:
-        line: 328
+        line: 331
         character: 28
