@@ -210,6 +210,7 @@ The Capital One Shop with Rewards API is a platform that allows users to seamles
 - [Sandbox](https://developer.capitalone.com/documentation/sandbox)
 - [FAQ](https://developer.capitalone.com/help/faq)
 - [Support](https://developer.capitalone.com/help/tickets)
+- [GitHubOrganization](https://github.com/capitalone)
 
 ## Maintainers
 
