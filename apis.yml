@@ -1,6 +1,6 @@
 aid: capital-one
 url: >-
-  https://raw.githubusercontent.com/api-search/capital-one/refs/heads/main/apis.yml
+  https://raw.githubusercontent.com/api-evangelist/capital-one/refs/heads/main/apis.yml
 apis:
   - aid: capital-one:account-lookup-api
     name: Capital One Account Lookup API
@@ -225,10 +225,38 @@ apis:
       earning and redeeming their accumulated reward points.
 name: Capital One
 tags:
+  - Auto Finance
+  - Authorizations
+  - Banking
   - Credit Cards
-type: Contract
+  - Credit Offers
+  - DevExchange
+  - Financial Services
+  - OAuth 2.0
+  - Payments
+  - Rewards
+type: Index
+x-type: company
+position: Consumer
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
+x-features:
+  - Broad public developer program (DevExchange) across consumer banking capabilities
+  - OAuth 2.0-based authentication and authorization
+  - Sandbox environment for pre-production testing
+  - Public key sharing for client authentication and data protection
+  - Coverage across account lookup, authorizations, credit offers, and transactions
+  - Credit card application flows at point-of-sale and pre-application orchestration
+  - Real-time proactive prescreen and enhanced decisioning data
+  - Rewards and Shop with Rewards integration for merchants
+x-use-cases:
+  - Partner and fintech integration with Capital One consumer banking
+  - Credit card application embedding at point-of-sale and online checkout
+  - Personalized credit offers and prescreen underwriting
+  - Reward-powered shopping and commerce experiences
+  - Auto financing application and approval flows
+  - Consumer-permissioned account summary for partner dashboards
+  - Real-time transaction authorization for merchants and fintechs
 common:
   - url: https://developer.capitalone.com/documentation/getting-started
     name: Capital One DevExchange
@@ -254,15 +282,16 @@ common:
     url: https://github.com/capitalone
     type: GitHubOrganization
 created: '2024-11-15'
-modified: '2025-02-20'
-position: Consuming
+modified: '2026-04-23'
 description: >-
-  Capital One is a financial services company that offers a wide range of banking
-  products and services, including credit cards, checking and savings accounts, loans,
-  and investment products. They are known for their innovative approach to banking,
-  using technology to provide convenient and personalized banking experiences for
-  their customers. Capital One is also a major player in the credit card industry,
-  offering rewards programs and perks to their cardholders.
+  Capital One is a financial services company offering credit cards, checking
+  and savings accounts, loans, and auto financing in the United States. Through
+  the Capital One DevExchange developer program, the bank publishes a catalog
+  of production APIs for account lookup, transaction authorizations, credit
+  offers, customer transactions, credit card applications, auto financing,
+  proactive prescreen, partner account summary, shop with rewards, and public
+  key sharing for client authentication. OAuth 2.0 secures access and a public
+  sandbox supports pre-production integration.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
