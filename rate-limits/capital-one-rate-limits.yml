@@ -4,156 +4,38 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Capital One
 providerId: capital-one
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
-  - Auto Finance
-  - Authorizations
   - Banking
-  - Credit Cards
-  - Credit Offers
   - DevExchange
   - Financial Services
-  - OAuth 2.0
-  - Payments
-  - Rewards
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Capital One API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: Capital One does not publish per-API rate limits for the DevExchange portfolio. Limits are
+  established per partner agreement; consult the partnership terms or DevExchange technical contact for
+  specific values.
+notes: No public rate-limit documentation found. Treat all limits as set by partnership contract; assume
+  HTTP 429 throttling and OAuth 2.0 token-bound scoping.
+sources:
+  - https://developer.capitalone.com/
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Capital One Account Lookup API
-      - Capital One Authorizations API
-      - Capital One Credit Offers API
-      - Capital One Customer Transactions
-      - Capital One Data Protection and Client Authentication Public Key Sharing API
-      - Capital One Digital Auto Financing Credit Application API
-      - Capital One Enhanced Decisioning Data API
-      - Capital One In-Store Credit Card Payments API
-      - Capital One POS Credit Card Application API
-      - Capital One Partner Account Summary API
-      - Capital One Pre-Application Orchestrator API
-      - Capital One Real-Time Proactive Prescreen API
-      - Capital One Retrieve Consumer Bank Products API
-      - Capital One Shop with Rewards API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Capital One Account Lookup API
-      - Capital One Authorizations API
-      - Capital One Credit Offers API
-      - Capital One Customer Transactions
-      - Capital One Data Protection and Client Authentication Public Key Sharing API
-      - Capital One Digital Auto Financing Credit Application API
-      - Capital One Enhanced Decisioning Data API
-      - Capital One In-Store Credit Card Payments API
-      - Capital One POS Credit Card Application API
-      - Capital One Partner Account Summary API
-      - Capital One Pre-Application Orchestrator API
-      - Capital One Real-Time Proactive Prescreen API
-      - Capital One Retrieve Consumer Bank Products API
-      - Capital One Shop with Rewards API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Capital One Account Lookup API
-      - Capital One Authorizations API
-      - Capital One Credit Offers API
-      - Capital One Customer Transactions
-      - Capital One Data Protection and Client Authentication Public Key Sharing API
-      - Capital One Digital Auto Financing Credit Application API
-      - Capital One Enhanced Decisioning Data API
-      - Capital One In-Store Credit Card Payments API
-      - Capital One POS Credit Card Application API
-      - Capital One Partner Account Summary API
-      - Capital One Pre-Application Orchestrator API
-      - Capital One Real-Time Proactive Prescreen API
-      - Capital One Retrieve Consumer Bank Products API
-      - Capital One Shop with Rewards API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Capital One Account Lookup API
-      - Capital One Authorizations API
-      - Capital One Credit Offers API
-      - Capital One Customer Transactions
-      - Capital One Data Protection and Client Authentication Public Key Sharing API
-      - Capital One Digital Auto Financing Credit Application API
-      - Capital One Enhanced Decisioning Data API
-      - Capital One In-Store Credit Card Payments API
-      - Capital One POS Credit Card Application API
-      - Capital One Partner Account Summary API
-      - Capital One Pre-Application Orchestrator API
-      - Capital One Real-Time Proactive Prescreen API
-      - Capital One Retrieve Consumer Bank Products API
-      - Capital One Shop with Rewards API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Capital One Account Lookup API
-      - Capital One Authorizations API
-      - Capital One Credit Offers API
-      - Capital One Customer Transactions
-      - Capital One Data Protection and Client Authentication Public Key Sharing API
-      - Capital One Digital Auto Financing Credit Application API
-      - Capital One Enhanced Decisioning Data API
-      - Capital One In-Store Credit Card Payments API
-      - Capital One POS Credit Card Application API
-      - Capital One Partner Account Summary API
-      - Capital One Pre-Application Orchestrator API
-      - Capital One Real-Time Proactive Prescreen API
-      - Capital One Retrieve Consumer Bank Products API
-      - Capital One Shop with Rewards API
+  - name: Per-partner contract limit
+    scope: partner
+    metric: varies
+    limit: see partnership agreement
+    notes: Capital One sets request and concurrency caps per partner; not publicly documented.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: OAuth 2.0 scoping
+    description: All DevExchange APIs use OAuth 2.0; tokens are bound to a partner client_id which scopes
+      rate-limit accounting.
+  - name: Backoff strategy
+    description: Honor 429 responses with exponential backoff; coordinate sustained traffic increases
+      with the Capital One technical contact.
+  - name: Production vs sandbox
+    description: Sandbox environments are constrained more aggressively than production; do not load-test
+      in sandbox.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
