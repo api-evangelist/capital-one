@@ -258,6 +258,8 @@ x-use-cases:
   - Consumer-permissioned account summary for partner dashboards
   - Real-time transaction authorization for merchants and fintechs
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/capital-one
   - url: https://developer.capitalone.com/documentation/getting-started
     name: Capital One DevExchange
     type: GettingStarted
