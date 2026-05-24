@@ -283,6 +283,8 @@ common:
   - name: GitHub Organization
     url: https://github.com/capitalone
     type: GitHubOrganization
+  - type: LLMsTxt
+    url: https://developer.capitalone.com/llms.txt
 created: '2024-11-15'
 modified: '2026-04-23'
 description: >-
