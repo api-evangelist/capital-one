@@ -1,0 +1,1062 @@
+# Capital One GraphQL Schema
+# Conceptual schema representing Capital One's banking, credit, and financial services APIs
+# Developer Portal: https://developer.capitalone.com/
+# GitHub: https://github.com/capitalone
+
+# ─── Scalars ────────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar Date
+scalar Decimal
+scalar JSON
+
+# ─── Enums ──────────────────────────────────────────────────────────────────
+
+enum AccountStatus {
+  ACTIVE
+  CLOSED
+  FROZEN
+  PENDING
+  RESTRICTED
+}
+
+enum AccountType {
+  CHECKING
+  SAVINGS
+  CREDIT_CARD
+  AUTO_LOAN
+  MORTGAGE
+  PERSONAL_LOAN
+}
+
+enum TransactionStatus {
+  PENDING
+  POSTED
+  DECLINED
+  REVERSED
+  CANCELLED
+}
+
+enum TransactionType {
+  PURCHASE
+  PAYMENT
+  TRANSFER
+  ZELLE
+  WIRE_TRANSFER
+  ACH
+  CHECK_DEPOSIT
+  STATEMENT_CREDIT
+  FEE
+  INTEREST
+  REFUND
+}
+
+enum RewardType {
+  CASH_BACK
+  MILES
+  POINTS
+}
+
+enum CardStatus {
+  ACTIVE
+  LOCKED
+  CANCELLED
+  EXPIRED
+  REPLACED
+}
+
+enum AlertSeverity {
+  INFO
+  WARNING
+  CRITICAL
+}
+
+enum NotificationChannel {
+  EMAIL
+  SMS
+  PUSH
+  IN_APP
+}
+
+enum PaymentFrequency {
+  WEEKLY
+  BIWEEKLY
+  MONTHLY
+  QUARTERLY
+}
+
+enum DocumentType {
+  STATEMENT
+  TAX_1099_INT
+  TAX_1099_DIV
+  TAX_1098
+  NOTICE
+}
+
+enum OfferCategory {
+  DINING
+  TRAVEL
+  GROCERY
+  GAS
+  ENTERTAINMENT
+  SHOPPING
+  UTILITIES
+  OTHER
+}
+
+enum ConsentStatus {
+  GRANTED
+  REVOKED
+  PENDING
+  EXPIRED
+}
+
+# ─── Account Domain ──────────────────────────────────────────────────────────
+
+interface Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+}
+
+type CheckingAccount implements Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  availableBalance: AvailableBalance!
+  pendingBalance: PendingBalance!
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+  linkedCards: [Card!]!
+  autoPay: AutoPay
+  zelleEnabled: Boolean!
+}
+
+type SavingsAccount implements Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  availableBalance: AvailableBalance!
+  pendingBalance: PendingBalance!
+  interestRate: Decimal!
+  annualPercentageYield: Decimal!
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+  autoPay: AutoPay
+}
+
+type CreditCard implements Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  availableBalance: AvailableBalance!
+  pendingBalance: PendingBalance!
+  statementBalance: StatementBalance!
+  creditLimit: CreditLimit!
+  spendingLimit: SpendingLimit
+  purchaseAPR: Decimal!
+  cashAdvanceAPR: Decimal
+  annualFee: Decimal
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+  rewards: Reward
+  offers: [Offer!]!
+  cards: [CardDetails!]!
+  virtualCards: [VirtualCard!]!
+  autoPay: AutoPay
+  authorizedUsers: [AuthorizedUser!]!
+  paymentDueDate: Date
+  minimumPaymentDue: Decimal
+}
+
+type AutoLoan implements Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  originalLoanAmount: Decimal!
+  remainingBalance: Decimal!
+  interestRate: Decimal!
+  termMonths: Int!
+  monthlyPaymentAmount: Decimal!
+  nextPaymentDate: Date
+  vehicleVIN: String
+  vehicleMake: String
+  vehicleModel: String
+  vehicleYear: Int
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+  autoPay: AutoPay
+}
+
+type Mortgage implements Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  originalLoanAmount: Decimal!
+  remainingBalance: Decimal!
+  interestRate: Decimal!
+  termYears: Int!
+  monthlyPaymentAmount: Decimal!
+  nextPaymentDate: Date
+  propertyAddress: Address!
+  escrowBalance: Decimal
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+  autoPay: AutoPay
+}
+
+type PersonalLoan implements Account {
+  id: ID!
+  accountNumber: String!
+  routingNumber: String
+  type: AccountType!
+  status: AccountStatus!
+  nickname: String
+  openedDate: Date
+  balance: AccountBalance!
+  originalLoanAmount: Decimal!
+  remainingBalance: Decimal!
+  interestRate: Decimal!
+  termMonths: Int!
+  monthlyPaymentAmount: Decimal!
+  nextPaymentDate: Date
+  customer: Customer!
+  transactions(limit: Int, offset: Int, startDate: Date, endDate: Date): [Transaction!]!
+  statements: [Statement!]!
+  notifications: [Notification!]!
+  autoPay: AutoPay
+}
+
+# ─── Balance Domain ──────────────────────────────────────────────────────────
+
+type AccountBalance {
+  current: Decimal!
+  currency: String!
+  asOf: DateTime!
+}
+
+type AvailableBalance {
+  amount: Decimal!
+  currency: String!
+  asOf: DateTime!
+}
+
+type PendingBalance {
+  amount: Decimal!
+  currency: String!
+  pendingTransactionCount: Int!
+  asOf: DateTime!
+}
+
+type StatementBalance {
+  amount: Decimal!
+  currency: String!
+  statementDate: Date!
+  dueDate: Date!
+}
+
+# ─── Transaction Domain ──────────────────────────────────────────────────────
+
+interface Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+}
+
+type TransactionDetail {
+  merchantName: String
+  merchantCategory: String
+  merchantCategoryCode: String
+  merchantCity: String
+  merchantState: String
+  merchantCountry: String
+  referenceNumber: String
+  enrichedDescription: String
+  logoUrl: String
+  isInternational: Boolean!
+  foreignAmount: Decimal
+  foreignCurrency: String
+  exchangeRate: Decimal
+}
+
+type Purchase implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  merchantName: String
+  rewardEarned: Decimal
+}
+
+type Payment implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  paymentMethod: PaymentMethod
+  confirmationNumber: String
+}
+
+type Transfer implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  sourceAccountId: ID!
+  destinationAccountId: ID!
+  memo: String
+}
+
+type Zelle implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  recipientToken: String!
+  memo: String
+  zelleReferenceId: String
+}
+
+type WireTransfer implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  beneficiaryName: String!
+  beneficiaryBank: String!
+  beneficiaryRoutingNumber: String
+  beneficiaryAccountNumber: String
+  swift: String
+  referenceMessage: String
+  fedReferenceNumber: String
+}
+
+type ACH implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  companyName: String!
+  companyEntryDescription: String
+  traceNumber: String
+  standardEntryClass: String
+}
+
+type CheckDeposit implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  checkNumber: String
+  frontImageUrl: String
+  backImageUrl: String
+  availabilityDate: Date
+}
+
+type StatementCredit implements Transaction {
+  id: ID!
+  accountId: ID!
+  type: TransactionType!
+  status: TransactionStatus!
+  amount: Decimal!
+  currency: String!
+  description: String!
+  postedDate: Date
+  transactionDate: DateTime!
+  detail: TransactionDetail
+  creditReason: String
+  relatedOfferId: ID
+}
+
+# ─── Rewards Domain ──────────────────────────────────────────────────────────
+
+interface Reward {
+  id: ID!
+  accountId: ID!
+  rewardType: RewardType!
+  balance: Decimal!
+  expirationDate: Date
+  redemptions: [RewardRedemption!]!
+}
+
+type CashBack implements Reward {
+  id: ID!
+  accountId: ID!
+  rewardType: RewardType!
+  balance: Decimal!
+  pendingBalance: Decimal!
+  expirationDate: Date
+  redemptions: [RewardRedemption!]!
+  ytdEarned: Decimal!
+  baseEarnRate: Decimal!
+  bonusCategories: [BonusCategory!]!
+}
+
+type Mile implements Reward {
+  id: ID!
+  accountId: ID!
+  rewardType: RewardType!
+  balance: Decimal!
+  pendingBalance: Decimal!
+  expirationDate: Date
+  redemptions: [RewardRedemption!]!
+  lifetimeMilesEarned: Decimal!
+  transferPartners: [String!]!
+}
+
+type Points implements Reward {
+  id: ID!
+  accountId: ID!
+  rewardType: RewardType!
+  balance: Decimal!
+  pendingBalance: Decimal!
+  expirationDate: Date
+  redemptions: [RewardRedemption!]!
+  dollarValue: Decimal!
+}
+
+type BonusCategory {
+  category: OfferCategory!
+  earnRate: Decimal!
+  cap: Decimal
+  resetPeriod: String
+}
+
+type RewardRedemption {
+  id: ID!
+  rewardId: ID!
+  amount: Decimal!
+  redemptionType: String!
+  redeemedAt: DateTime!
+  statementCreditAmount: Decimal
+  travelBookingRef: String
+  giftCardValue: Decimal
+  confirmationNumber: String!
+}
+
+type Offer {
+  id: ID!
+  accountId: ID!
+  title: String!
+  description: String!
+  category: OfferCategory!
+  activatedAt: DateTime
+  expiresAt: DateTime
+  isActivated: Boolean!
+  details: OfferDetails!
+}
+
+type OfferDetails {
+  offerId: ID!
+  earnRate: Decimal
+  maxReward: Decimal
+  minimumSpend: Decimal
+  merchantName: String
+  merchantLogoUrl: String
+  terms: String!
+  eligibleChannels: [String!]!
+}
+
+# ─── Credit Domain ───────────────────────────────────────────────────────────
+
+type SpendingLimit {
+  accountId: ID!
+  totalLimit: Decimal!
+  usedAmount: Decimal!
+  availableAmount: Decimal!
+  temporaryLimit: Decimal
+  temporaryLimitExpiry: Date
+}
+
+type CreditLimit {
+  accountId: ID!
+  totalLimit: Decimal!
+  availableCredit: Decimal!
+  cashAdvanceLimit: Decimal
+  availableCashAdvance: Decimal
+}
+
+type CreditScore {
+  id: ID!
+  customerId: ID!
+  score: Int!
+  scoreRange: String!
+  scoreDate: Date!
+  bureau: String!
+  scoreFactors: [String!]!
+  ficoScore: FICOScore
+  history: [CreditScoreHistory!]!
+}
+
+type FICOScore {
+  id: ID!
+  customerId: ID!
+  score: Int!
+  scoreDate: Date!
+  version: String!
+  positiveFactors: [String!]!
+  negativeFactors: [String!]!
+}
+
+type CreditScoreHistory {
+  score: Int!
+  scoreDate: Date!
+  change: Int!
+}
+
+type CreditMonitor {
+  id: ID!
+  customerId: ID!
+  enrolledAt: DateTime!
+  isActive: Boolean!
+  latestScore: CreditScore
+  alerts: [CreditAlert!]!
+  reportSummary: JSON
+}
+
+type CreditAlert {
+  id: ID!
+  customerId: ID!
+  alertType: String!
+  severity: AlertSeverity!
+  description: String!
+  detectedAt: DateTime!
+  isRead: Boolean!
+  relatedAccountId: ID
+}
+
+type IDProtection {
+  id: ID!
+  customerId: ID!
+  enrolledAt: DateTime!
+  isActive: Boolean!
+  darkWebMonitoring: Boolean!
+  ssnMonitoring: Boolean!
+  addressChangeAlerts: Boolean!
+  monitoredEmails: [String!]!
+  monitoredPhones: [String!]!
+  alerts: [CreditAlert!]!
+}
+
+# ─── Payment Domain ──────────────────────────────────────────────────────────
+
+type AutoPay {
+  id: ID!
+  accountId: ID!
+  isEnabled: Boolean!
+  paymentAmount: String!
+  frequency: PaymentFrequency!
+  paymentDay: Int
+  paymentMethod: PaymentMethod!
+  nextScheduledDate: Date
+  enrolledAt: DateTime!
+}
+
+interface PaymentMethod {
+  id: ID!
+  customerId: ID!
+  nickname: String
+  isDefault: Boolean!
+  isVerified: Boolean!
+}
+
+type BankAccount implements PaymentMethod {
+  id: ID!
+  customerId: ID!
+  nickname: String
+  isDefault: Boolean!
+  isVerified: Boolean!
+  bankName: String!
+  routingNumber: String!
+  accountNumberLast4: String!
+  accountType: String!
+}
+
+type DebitCard implements PaymentMethod {
+  id: ID!
+  customerId: ID!
+  nickname: String
+  isDefault: Boolean!
+  isVerified: Boolean!
+  cardLast4: String!
+  expirationDate: String!
+  network: String!
+}
+
+# ─── Card Domain ─────────────────────────────────────────────────────────────
+
+type Card {
+  id: ID!
+  accountId: ID!
+  cardholderName: String!
+  last4: String!
+  expirationDate: String!
+  network: String!
+  status: CardStatus!
+  issuedDate: Date
+  details: CardDetails!
+  lock: CardLock
+  virtualCards: [VirtualCard!]!
+}
+
+type CardDetails {
+  cardId: ID!
+  cardNumber: String
+  cvv: String
+  expirationDate: String!
+  billingAddress: Address!
+  contactlessEnabled: Boolean!
+  internationalEnabled: Boolean!
+  cardArt: String
+}
+
+type CardLock {
+  cardId: ID!
+  isLocked: Boolean!
+  lockedAt: DateTime
+  lockedReason: String
+  unlockedAt: DateTime
+}
+
+type VirtualCard {
+  id: ID!
+  parentCardId: ID!
+  accountId: ID!
+  cardNumber: String!
+  cvv: String!
+  expirationDate: String!
+  status: CardStatus!
+  merchantLock: String
+  spendLimit: Decimal
+  createdAt: DateTime!
+  lastUsedAt: DateTime
+}
+
+# ─── Customer Domain ──────────────────────────────────────────────────────────
+
+type Customer {
+  id: ID!
+  profile: CustomerProfile!
+  accounts: [Account!]!
+  creditScore: CreditScore
+  creditMonitor: CreditMonitor
+  idProtection: IDProtection
+  notifications: [Notification!]!
+  alerts: [Alert!]!
+}
+
+type CustomerProfile {
+  customerId: ID!
+  firstName: String!
+  lastName: String!
+  middleName: String
+  dateOfBirth: Date
+  ssn: String
+  primaryAddress: Address!
+  mailingAddress: Address
+  contacts: [Contact!]!
+  employer: Employer
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Address {
+  id: ID!
+  line1: String!
+  line2: String
+  city: String!
+  state: String!
+  postalCode: String!
+  country: String!
+  addressType: String
+  isPrimary: Boolean!
+}
+
+type Contact {
+  id: ID!
+  customerId: ID!
+  type: String!
+  value: String!
+  isPrimary: Boolean!
+  isVerified: Boolean!
+  verifiedAt: DateTime
+}
+
+type Employer {
+  id: ID!
+  customerId: ID!
+  name: String!
+  industry: String
+  employmentType: String
+  startDate: Date
+  annualIncome: Decimal
+  address: Address
+}
+
+type Joint {
+  id: ID!
+  primaryCustomerId: ID!
+  jointCustomerId: ID!
+  accountId: ID!
+  addedAt: DateTime!
+  relationship: String
+  jointCustomer: Customer!
+}
+
+type AuthorizedUser {
+  id: ID!
+  primaryAccountId: ID!
+  firstName: String!
+  lastName: String!
+  dateOfBirth: Date
+  relationship: String
+  spendLimit: Decimal
+  card: Card
+  addedAt: DateTime!
+  status: String!
+}
+
+# ─── Notification Domain ─────────────────────────────────────────────────────
+
+type Notification {
+  id: ID!
+  customerId: ID!
+  accountId: ID
+  title: String!
+  body: String!
+  channel: NotificationChannel!
+  isRead: Boolean!
+  createdAt: DateTime!
+  readAt: DateTime
+  actionUrl: String
+  metadata: JSON
+}
+
+type Alert {
+  id: ID!
+  customerId: ID!
+  accountId: ID
+  alertType: String!
+  severity: AlertSeverity!
+  message: String!
+  triggeredAt: DateTime!
+  isRead: Boolean!
+  isDismissed: Boolean!
+}
+
+# ─── Document Domain ──────────────────────────────────────────────────────────
+
+type Statement {
+  id: ID!
+  accountId: ID!
+  documentType: DocumentType!
+  statementDate: Date!
+  dueDate: Date
+  openingBalance: Decimal!
+  closingBalance: Decimal!
+  minimumPaymentDue: Decimal
+  totalDebits: Decimal!
+  totalCredits: Decimal!
+  pdfUrl: String
+  transactions: [Transaction!]!
+  createdAt: DateTime!
+}
+
+type TaxDocument {
+  id: ID!
+  customerId: ID!
+  accountId: ID
+  documentType: DocumentType!
+  taxYear: Int!
+  totalInterest: Decimal
+  totalDividends: Decimal
+  totalMortgageInterest: Decimal
+  pdfUrl: String
+  issuedAt: DateTime!
+}
+
+# ─── Platform Domain ─────────────────────────────────────────────────────────
+
+type APIKey {
+  id: ID!
+  clientId: String!
+  name: String!
+  environment: String!
+  scopes: [String!]!
+  createdAt: DateTime!
+  expiresAt: DateTime
+  lastUsedAt: DateTime
+  isActive: Boolean!
+}
+
+type OAuthToken {
+  id: ID!
+  clientId: String!
+  tokenType: String!
+  scope: String!
+  issuedAt: DateTime!
+  expiresAt: DateTime!
+  isRevoked: Boolean!
+}
+
+type Webhook {
+  id: ID!
+  clientId: String!
+  url: String!
+  events: [String!]!
+  isActive: Boolean!
+  secret: String
+  createdAt: DateTime!
+  lastTriggeredAt: DateTime
+  failureCount: Int!
+}
+
+type Partnership {
+  id: ID!
+  partnerName: String!
+  partnerType: String!
+  integrationScope: [String!]!
+  status: String!
+  createdAt: DateTime!
+  contactEmail: String
+  portalUrl: String
+}
+
+type OpenBanking {
+  id: ID!
+  customerId: ID!
+  thirdPartyName: String!
+  sharedAccounts: [ID!]!
+  consentStatus: ConsentStatus!
+  grantedAt: DateTime
+  expiresAt: DateTime
+  revokedAt: DateTime
+  permittedScopes: [String!]!
+}
+
+type Nessie {
+  id: ID!
+  apiKey: String!
+  environment: String!
+  description: String
+  simulatedAccounts: [Account!]!
+  createdAt: DateTime!
+  documentationUrl: String!
+}
+
+type DataTransparency {
+  id: ID!
+  customerId: ID!
+  dataCategories: [String!]!
+  sharedWith: [String!]!
+  purpose: String!
+  legalBasis: String!
+  retentionPeriod: String
+  consentStatus: ConsentStatus!
+  updatedAt: DateTime!
+}
+
+type Privacy {
+  id: ID!
+  customerId: ID!
+  marketingOptOut: Boolean!
+  dataSharingOptOut: Boolean!
+  targetedAdsOptOut: Boolean!
+  californiaPrivacyRights: Boolean
+  downloadDataRequestUrl: String
+  deleteDataRequestUrl: String
+  updatedAt: DateTime!
+}
+
+# ─── Root Types ──────────────────────────────────────────────────────────────
+
+type Query {
+  # Account queries
+  account(id: ID!): Account
+  accounts(customerId: ID!): [Account!]!
+  checkingAccount(id: ID!): CheckingAccount
+  savingsAccount(id: ID!): SavingsAccount
+  creditCard(id: ID!): CreditCard
+  autoLoan(id: ID!): AutoLoan
+  mortgage(id: ID!): Mortgage
+  personalLoan(id: ID!): PersonalLoan
+
+  # Balance queries
+  accountBalance(accountId: ID!): AccountBalance!
+  availableBalance(accountId: ID!): AvailableBalance!
+  pendingBalance(accountId: ID!): PendingBalance!
+  statementBalance(accountId: ID!): StatementBalance
+
+  # Transaction queries
+  transaction(id: ID!): Transaction
+  transactions(accountId: ID!, limit: Int, offset: Int, startDate: Date, endDate: Date, type: TransactionType): [Transaction!]!
+
+  # Rewards queries
+  rewards(accountId: ID!): Reward
+  rewardRedemptions(rewardId: ID!): [RewardRedemption!]!
+  offers(accountId: ID!): [Offer!]!
+
+  # Credit queries
+  creditScore(customerId: ID!): CreditScore
+  creditMonitor(customerId: ID!): CreditMonitor
+  idProtection(customerId: ID!): IDProtection
+  creditLimit(accountId: ID!): CreditLimit!
+  spendingLimit(accountId: ID!): SpendingLimit
+
+  # Card queries
+  card(id: ID!): Card
+  cards(accountId: ID!): [Card!]!
+  virtualCards(cardId: ID!): [VirtualCard!]!
+
+  # Payment queries
+  autoPay(accountId: ID!): AutoPay
+  paymentMethods(customerId: ID!): [PaymentMethod!]!
+
+  # Customer queries
+  customer(id: ID!): Customer
+  customerProfile(customerId: ID!): CustomerProfile
+
+  # Notification/Document queries
+  notifications(customerId: ID!, unreadOnly: Boolean): [Notification!]!
+  alerts(customerId: ID!, unreadOnly: Boolean): [Alert!]!
+  statements(accountId: ID!, limit: Int): [Statement!]!
+  taxDocuments(customerId: ID!, taxYear: Int): [TaxDocument!]!
+
+  # Platform queries
+  apiKeys(clientId: String!): [APIKey!]!
+  webhooks(clientId: String!): [Webhook!]!
+  openBankingConsents(customerId: ID!): [OpenBanking!]!
+  privacy(customerId: ID!): Privacy
+  dataTransparency(customerId: ID!): [DataTransparency!]!
+}
+
+type Mutation {
+  # Account mutations
+  updateAccountNickname(accountId: ID!, nickname: String!): Account!
+
+  # Transfer mutations
+  initiateTransfer(fromAccountId: ID!, toAccountId: ID!, amount: Decimal!, memo: String): Transfer!
+  initiateZelle(fromAccountId: ID!, recipientToken: String!, amount: Decimal!, memo: String): Zelle!
+  initiateWireTransfer(fromAccountId: ID!, beneficiaryName: String!, beneficiaryBank: String!, routingNumber: String, accountNumber: String, swift: String, amount: Decimal!, reference: String): WireTransfer!
+
+  # Payment mutations
+  makePayment(accountId: ID!, paymentMethodId: ID!, amount: Decimal!): Payment!
+  enrollAutoPay(accountId: ID!, paymentMethodId: ID!, paymentAmount: String!, frequency: PaymentFrequency!, paymentDay: Int): AutoPay!
+  cancelAutoPay(accountId: ID!): Boolean!
+
+  # Card mutations
+  lockCard(cardId: ID!, reason: String): CardLock!
+  unlockCard(cardId: ID!): CardLock!
+  createVirtualCard(parentCardId: ID!, merchantLock: String, spendLimit: Decimal): VirtualCard!
+  cancelVirtualCard(virtualCardId: ID!): VirtualCard!
+  addAuthorizedUser(accountId: ID!, firstName: String!, lastName: String!, dateOfBirth: Date!, relationship: String, spendLimit: Decimal): AuthorizedUser!
+  removeAuthorizedUser(authorizedUserId: ID!): Boolean!
+
+  # Reward mutations
+  redeemCashBack(rewardId: ID!, amount: Decimal!, redemptionType: String!): RewardRedemption!
+  activateOffer(offerId: ID!): Offer!
+
+  # Notification mutations
+  markNotificationRead(notificationId: ID!): Notification!
+  markAlertDismissed(alertId: ID!): Alert!
+  updateNotificationPreferences(customerId: ID!, channels: [NotificationChannel!]!): Customer!
+
+  # Platform mutations
+  createWebhook(clientId: String!, url: String!, events: [String!]!): Webhook!
+  deleteWebhook(webhookId: ID!): Boolean!
+  revokeOpenBankingConsent(consentId: ID!): OpenBanking!
+  updatePrivacySettings(customerId: ID!, marketingOptOut: Boolean, dataSharingOptOut: Boolean, targetedAdsOptOut: Boolean): Privacy!
+}
