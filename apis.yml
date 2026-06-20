@@ -202,7 +202,7 @@ tags:
 type: Index
 kind: company
 position: Consumer
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 x-features:
 - Broad public developer program (DevExchange) across consumer banking capabilities
