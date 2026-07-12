@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: developer.capitalone.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 15 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: capitalone.com
+  dnssec: false
+  caa:
+  - 0 issue "digicert.com"
+  - 0 issue "sectigo.com"
+  - 0 issuewild "amazon.com"
+  - 0 iodef "mailto:domainmgr@capitalone.com"
+  - 0 issue "entrust.net"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
