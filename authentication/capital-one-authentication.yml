@@ -1,0 +1,33 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.capitalone.com/documentation/o-auth
+docs: https://developer.capitalone.com/documentation/o-auth
+notes: >-
+  Capital One does not publish a downloadable OpenAPI, so this profile is
+  captured from the DevExchange OAuth documentation rather than derived from
+  securitySchemes. All DevExchange partner APIs are secured with OAuth 2.0.
+  Access to production is gated behind partner approval; the sandbox
+  (api-sandbox.capitalone.com) is used for pre-production integration.
+summary:
+  types: [oauth2]
+  oauth2_flows: [clientCredentials]
+  token_type: Bearer
+  transport: header
+schemes:
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.capitalone.com/oauth2/token
+    sandbox_tokenUrl: https://api-sandbox.capitalone.com/oauth2/token
+    note: >-
+      Client credentials grant. Partners obtain a client_id / client_secret via
+      the DevExchange program and exchange them for a short-lived bearer token
+      presented on each API call as `Authorization: Bearer <token>`.
+  sources: [https://developer.capitalone.com/documentation/o-auth]
+related:
+- product: Data Protection and Client Authentication Public Key Sharing API
+  role: >-
+    Supporting security primitive — clients exchange public keys with Capital
+    One to establish encrypted, authenticated communication for sensitive data
+    in transit, complementing the OAuth 2.0 bearer model.

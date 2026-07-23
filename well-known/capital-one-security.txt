@@ -1,0 +1,6 @@
+# Find more information about our report submission process here
+Policy: https://www.capitalone.com/digital/responsible-disclosure/
+# Use this mailing address to get in contact with our team
+Contact: responsibledisclosure@capitalone.com
+Expires: 2025-12-14T05:00:00.000Z
+Preferred-Languages: EN

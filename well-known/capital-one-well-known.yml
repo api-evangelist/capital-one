@@ -1,0 +1,33 @@
+generated: '2026-07-23'
+method: searched
+source: live probes of /.well-known/ and /security.txt on Capital One hosts
+notes: >-
+  developer.capitalone.com is a client-rendered single-page app: every
+  /.well-known/* path returns HTTP 200 with the SPA HTML shell (not a real
+  discovery document), so those are recorded as html-shell, not captured. The
+  real, machine-readable find is the RFC 9116 security.txt served at
+  https://www.capitalone.com/security.txt.
+hosts:
+- host: https://www.capitalone.com
+  documents:
+  - path: /security.txt
+    status: 200
+    kind: security.txt
+    format: rfc9116
+    file: capital-one-security.txt
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://developer.capitalone.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: SPA HTML shell, not a security.txt document
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: SPA HTML shell, not an OIDC discovery document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: SPA HTML shell, not an RFC 8414 document
+  - path: /.well-known/api-catalog
+    status: 200
+    note: SPA HTML shell, not an RFC 9727 api-catalog

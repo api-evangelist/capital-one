@@ -1,0 +1,26 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.capitalone.com/documentation/sandbox
+docs: https://developer.capitalone.com/documentation/sandbox
+notes: >-
+  Capital One DevExchange provides a sandbox environment for pre-production
+  integration testing, separated from production by host. Specific published
+  test identifiers / fixtures are not exposed publicly because the developer
+  program is partner-gated; no test values are invented here (no fabrication).
+separation:
+  style: host-based
+  sandbox_host: https://api-sandbox.capitalone.com
+  production_host: https://api.capitalone.com
+  token_endpoints:
+    sandbox: https://api-sandbox.capitalone.com/oauth2/token
+    production: https://api.capitalone.com/oauth2/token
+workflow:
+  - Register for the DevExchange developer program.
+  - Obtain sandbox OAuth 2.0 client credentials.
+  - Build and validate against the sandbox host.
+  - Request partner approval to promote the integration to production.
+test_values:
+  published: false
+  note: >-
+    Sandbox test data (accounts, cards, transaction fixtures) is provisioned to
+    approved partners rather than published openly.

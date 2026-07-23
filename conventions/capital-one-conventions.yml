@@ -1,0 +1,48 @@
+generated: '2026-07-23'
+method: searched
+source: >-
+  https://developer.capitalone.com/documentation/getting-started ;
+  https://developer.capitalone.com/documentation/o-auth ;
+  https://developer.capitalone.com/documentation/sandbox
+notes: >-
+  Cross-cutting conventions for the Capital One DevExchange partner APIs.
+  Documentation is HTML-only (single-page app) and access is partner-gated, so
+  request/response envelope, pagination, and idempotency details are not
+  publicly enumerated; only conventions Capital One documents publicly are
+  captured here. No idempotency-key contract is documented, so no Idempotency
+  pointer is asserted (no fabrication).
+authentication:
+  style: oauth2-bearer
+  flow: clientCredentials
+  header: 'Authorization: Bearer <token>'
+  docs: https://developer.capitalone.com/documentation/o-auth
+environments:
+  separation: host-based
+  sandbox_host: https://api-sandbox.capitalone.com
+  production_host: https://api.capitalone.com
+  promotion: >-
+    Integrations are built and validated in the sandbox, then promoted to
+    production after partner approval.
+  docs: https://developer.capitalone.com/documentation/sandbox
+transport:
+  protocol: https
+  tls_minimum: TLSv1.2
+  format: application/json
+idempotency:
+  documented: false
+  note: No public idempotency-key contract is documented for the DevExchange catalog.
+pagination:
+  documented: false
+  note: Pagination parameters are not publicly enumerated (partner-gated docs).
+error_envelope:
+  documented: false
+  note: Error envelope shape is not publicly enumerated; see conformance for RFC 9457 status (unknown).
+data_protection:
+  public_key_sharing: >-
+    The Data Protection and Client Authentication Public Key Sharing API lets
+    clients exchange public keys with Capital One to establish encrypted,
+    authenticated communication for sensitive data in transit.
+cross_links:
+  authentication: authentication/capital-one-authentication.yml
+  security: security/capital-one-vulnerability-disclosure.yml
+  rate_limits: rate-limits/capital-one-rate-limits.yml

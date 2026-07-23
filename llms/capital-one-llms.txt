@@ -1,0 +1,59 @@
+# Capital One
+
+> Capital One is a US money-center bank and financial services company offering credit cards, checking and savings accounts, loans, and auto financing. Through the Capital One DevExchange developer program the bank publishes a catalog of partner-facing production APIs secured with OAuth 2.0, with a public sandbox for pre-production integration and production access gated behind partner approval. Developer documentation is HTML-only; Capital One does not publish downloadable OpenAPI specifications. As an FDX member, Capital One also supports consumer-permissioned open-finance data access through aggregators.
+
+## Developer program
+
+- [Developer Portal (DevExchange)](https://developer.capitalone.com/)
+- [Getting Started](https://developer.capitalone.com/documentation/getting-started)
+- [OAuth 2.0](https://developer.capitalone.com/documentation/o-auth)
+- [Sandbox](https://developer.capitalone.com/documentation/sandbox)
+- [FAQ](https://developer.capitalone.com/help/faq)
+- [Support tickets](https://developer.capitalone.com/help/tickets)
+- [GitHub organization](https://github.com/capitalone)
+- [Tech blog](https://www.capitalone.com/tech/blog/)
+
+## APIs (DevExchange)
+
+- [Account Lookup API](https://developer.capitalone.com/products/account-lookup?id=24064-1): Resolve and retrieve consumer account information (balances, transaction history, status).
+- [Authorizations API](https://developer.capitalone.com/products/authorizations?id=658618-1): Validate and authorize financial transactions in real time.
+- [Credit Offers API](https://developer.capitalone.com/products/credit-offers?id=3105-3): Programmatic access to Capital One credit card offers, rewards, rates, fees, and eligibility.
+- [Customer Transactions](https://developer.capitalone.com/products/customer-transactions?id=3313-1): Consumer-permissioned transaction data for reconciliation and account visibility.
+- [Data Protection and Client Authentication Public Key Sharing API](https://developer.capitalone.com/products/data-protection-and-client-authentication-public-key-sharing?id=9721-1): Exchange public keys to establish encrypted, authenticated communication.
+- [Digital Auto Financing Credit Application API](https://developer.capitalone.com/products/digital-auto-financing-credit-application?id=647907-1): Submit and process auto loan applications.
+- [Enhanced Decisioning Data API](https://developer.capitalone.com/products/enhanced-decisioning-data?id=23343-1): Data signals for credit, risk, and fraud decisioning.
+- [In-Store Credit Card Payments API](https://developer.capitalone.com/products/in-store-credit-card-payments?id=10565-2): Process Capital One credit card payments in in-store POS flows.
+- [POS Credit Card Application API](https://developer.capitalone.com/products/pos-credit-card-application?id=17912-1): Embed a credit card application into POS checkout.
+- [Partner Account Summary API](https://developer.capitalone.com/products/partner-account-summary?id=18757-1): Consumer-permissioned account summary information in real time.
+- [Pre-Application Orchestrator API](https://developer.capitalone.com/products/pre-application-orchestrator?id=18728-1): Coordinate pre-application steps for loans and credit cards.
+- [Real-Time Proactive Prescreen API](https://developer.capitalone.com/products/real-time-proactive-prescreen?id=320973-1): Assess consumer creditworthiness in real time for pre-screened offers.
+- [Retrieve Consumer Bank Products API](https://developer.capitalone.com/products/retrieve-consumer-bank-products?id=1359-5): Access a consumer's Capital One banking products.
+- [Shop with Rewards API](https://developer.capitalone.com/products/shop-with-rewards?id=637511-1): Integrate reward points and benefits into online shopping.
+
+## Authentication
+
+- OAuth 2.0 client credentials grant; short-lived bearer token on each request.
+- Sandbox host: https://api-sandbox.capitalone.com — Production host: https://api.capitalone.com
+- Production access is gated behind DevExchange partner approval.
+
+## Security
+
+- [security.txt](https://www.capitalone.com/security.txt)
+- [Responsible disclosure policy](https://www.capitalone.com/digital/responsible-disclosure/) (HackerOne-managed program)
+- Contact: responsibledisclosure@capitalone.com
+
+## Repo artifacts
+
+- Authentication profile: authentication/capital-one-authentication.yml
+- Conventions: conventions/capital-one-conventions.yml
+- Conformance: conformance/capital-one-conformance.yml
+- Sandbox: sandbox/capital-one-sandbox.yml
+- Well-known index: well-known/capital-one-well-known.yml
+- Vulnerability disclosure: security/capital-one-vulnerability-disclosure.yml
+- Domain security: security/capital-one-domain-security.yml
+
+## Notes
+
+- Capital One does not publish downloadable OpenAPI/Swagger definitions; documentation is a client-rendered single-page app.
+- The GraphQL schema in this repo (graphql/) is a conceptual model of the domain, not an introspected production schema.
+- Capital One is a member of the Financial Data Exchange (FDX) for consumer-permissioned open finance.

@@ -337,6 +337,22 @@ common:
   url: https://www.capitalone.com/privacy/
 - type: DomainSecurity
   url: security/capital-one-domain-security.yml
+- type: SecurityTxt
+  url: well-known/capital-one-security.txt
+- type: WellKnown
+  url: well-known/capital-one-well-known.yml
+- type: VulnerabilityDisclosure
+  url: security/capital-one-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.capitalone.com/digital/responsible-disclosure/
+- type: Authentication
+  url: authentication/capital-one-authentication.yml
+- type: Conformance
+  url: conformance/capital-one-conformance.yml
+- type: Conventions
+  url: conventions/capital-one-conventions.yml
+- type: LLMsTxt
+  url: llms/capital-one-llms.txt
 - type: Plans
   url: plans/capital-one-plans-pricing.yml
 - type: RateLimits

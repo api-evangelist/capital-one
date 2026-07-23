@@ -1,0 +1,33 @@
+generated: '2026-07-23'
+method: searched
+source: >-
+  https://developer.capitalone.com/documentation/o-auth ; Capital One FDX
+  membership (Financial Data Exchange); DevExchange program documentation
+notes: >-
+  Standards posture for the Capital One DevExchange partner APIs. No downloadable
+  OpenAPI is published, so spec-derived assertions are limited; entries below are
+  grounded in the documented OAuth model and Capital One's public open-finance
+  positioning.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    DevExchange APIs are secured with OAuth 2.0 (client credentials);
+    documented at developer.capitalone.com/documentation/o-auth
+- id: fdx
+  conforms: true
+  evidence: >-
+    Capital One is a member of the Financial Data Exchange (FDX) and supports
+    consumer-permissioned open-finance data sharing via the FDX API standard
+    through aggregators in the US voluntary open-banking context
+- id: oidc
+  conforms: false
+  evidence: no public OpenID Connect discovery document published
+- id: fapi
+  conforms: unknown
+  evidence: >-
+    financial-grade API security profile not publicly documented for the
+    DevExchange catalog
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: no public machine-readable spec to confirm problem+json error format
