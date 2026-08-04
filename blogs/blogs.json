@@ -1,0 +1,11 @@
+{
+  "repo": "capital-one",
+  "feeds": [
+    {
+      "source": "https://www.linkedin.com/company/capital-one",
+      "error": "HTTPError"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-01T15:49:00Z"
+}
