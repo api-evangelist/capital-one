@@ -309,6 +309,8 @@ x-use-cases:
 - Consumer-permissioned account summary for partner dashboards
 - Real-time transaction authorization for merchants and fintechs
 common:
+- type: Login
+  url: https://verified.capitalone.com/auth/signin
 - type: Website
   url: https://www.capitalone.com/
 - type: DeveloperPortal
