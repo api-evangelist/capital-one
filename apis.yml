@@ -4,6 +4,10 @@ apis:
 - aid: capital-one:account-lookup-api
   name: Capital One Account Lookup API
   tags:
+  - Account
+  - Banking
+  - United States
+  tags_raw:
   - Accounts
   - Banking
   - United States
@@ -60,6 +64,10 @@ apis:
 - aid: capital-one:customer-transactions
   name: Capital One Customer Transactions
   tags:
+  - Transaction
+  - Banking
+  - United States
+  tags_raw:
   - Transactions
   - Banking
   - United States
@@ -133,6 +141,10 @@ apis:
   name: Capital One In-Store Credit Card Payments API
   tags:
   - Payments
+  - Point-of-Sale
+  - United States
+  tags_raw:
+  - Payments
   - Point of Sale
   - United States
   baseURL: https://api-sandbox.capitalone.com
@@ -151,6 +163,10 @@ apis:
   name: Capital One POS Credit Card Application API
   tags:
   - Credit Cards
+  - Point-of-Sale
+  - United States
+  tags_raw:
+  - Credit Cards
   - Point of Sale
   - United States
   baseURL: https://api-sandbox.capitalone.com
@@ -168,6 +184,10 @@ apis:
 - aid: capital-one:partner-account-summary-api
   name: Capital One Partner Account Summary API
   tags:
+  - Account
+  - Partners
+  - United States
+  tags_raw:
   - Accounts
   - Partners
   - United States
@@ -223,6 +243,10 @@ apis:
   name: Capital One Retrieve Consumer Bank Products API
   tags:
   - Banking
+  - Product
+  - United States
+  tags_raw:
+  - Banking
   - Products
   - United States
   baseURL: https://api-sandbox.capitalone.com
@@ -257,6 +281,21 @@ apis:
     and no publicly downloadable machine-readable specification is provided.
 name: Capital One
 tags:
+- Auto Finance
+- Authorizations
+- Banking
+- Credit Cards
+- Credit Offers
+- DevExchange
+- Financial-Services
+- FDX
+- Open Banking
+- Authentication
+- Payments
+- Rewards
+- United States
+- Fortune 500
+tags_raw:
 - Auto Finance
 - Authorizations
 - Banking
