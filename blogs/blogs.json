@@ -3,12 +3,9 @@
   "feeds": [
     {
       "source": "https://www.linkedin.com/company/capital-one",
-      "feed_url": "https://www.linkedin.com/company/capital-one",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "error": "HTTPError"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-15T12:22:01Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
