@@ -336,7 +336,7 @@ accessModel:
   - authentication
   generated: '2026-07-23'
   method: derived
-position: Consumer
+position: Consuming
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/capital-one.png
 access: 3rd-Party
 x-features:
