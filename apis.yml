@@ -28,6 +28,10 @@ apis:
 - aid: capital-one:authorizations-api
   name: Capital One Authorizations API
   tags:
+  - Authorization
+  - Payments
+  - United States
+  tags_raw:
   - Authorizations
   - Payments
   - United States
@@ -282,7 +286,7 @@ apis:
 name: Capital One
 tags:
 - Auto Finance
-- Authorizations
+- Authorization
 - Banking
 - Credit Cards
 - Credit Offers
