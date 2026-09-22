@@ -1,5 +1,8 @@
 aid: capital-one
 url: https://raw.githubusercontent.com/api-evangelist/capital-one/refs/heads/main/apis.yml
+x-docs-platform: redocly
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-21
 apis:
 - aid: capital-one:account-lookup-api
   name: Capital One Account Lookup API
