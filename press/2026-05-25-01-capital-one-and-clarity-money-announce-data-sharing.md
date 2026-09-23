@@ -1,7 +1,9 @@
 ---
 title: Capital One and Clarity Money Announce Data Sharing ...
 url: https://investor.capitalone.com/news-releases/news-release-details/capital-one-and-clarity-money-announce-data-sharing-agreement
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Capital One Financial" press release artificial intelligence'
 position: 1
 source: serpapi-google
