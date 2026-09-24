@@ -19,8 +19,6 @@ apis:
   properties:
   - url: https://developer.capitalone.com/products/account-lookup?id=24064-1
     type: Documentation
-  - url: graphql/capital-one-graphql.md
-    type: GraphQL
   description: The Capital One Account Lookup API is a DevExchange product that lets
     approved partners resolve and retrieve consumer account information such as balances,
     transaction history, and account status. Integrators use it to surface up-to-date
@@ -129,6 +127,10 @@ apis:
 - aid: capital-one:enhanced-decisioning-data-api
   name: Capital One Enhanced Decisioning Data API
   tags:
+  - Decisioning
+  - Risk Management
+  - United States
+  tags_raw:
   - Decisioning
   - Risk
   - United States
@@ -294,7 +296,7 @@ tags:
 - Credit Cards
 - Credit Offers
 - DevExchange
-- Financial-Services
+- Financial Services
 - FDX
 - Open Banking
 - Authentication
@@ -317,6 +319,7 @@ tags_raw:
 - Rewards
 - United States
 - Fortune 500
+- Financial-Services
 type: Index
 kind: company
 deliveryModel:
