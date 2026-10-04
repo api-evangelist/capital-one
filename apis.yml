@@ -304,6 +304,7 @@ tags:
 - Rewards
 - United States
 - Fortune 500
+- Consumer Banking
 tags_raw:
 - Auto Finance
 - Authorizations
@@ -320,6 +321,7 @@ tags_raw:
 - United States
 - Fortune 500
 - Financial-Services
+- Consumer Banking
 type: Index
 kind: company
 deliveryModel:

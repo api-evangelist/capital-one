@@ -1,30 +1,34 @@
 ---
 kin_checks:
   slug: capital-one
-  schema_version: 0.22.0
-  scored_at: '2026-09-21'
-  run_ts: 2026-09-21T233935
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T024842
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
-    apply in `na`. Everything else in rubric/scoring-0.22.0.yml was earned; counts
+    apply in `na`. Everything else in rubric/scoring-0.23.0.yml was earned; counts
     below let you verify that.
   counts:
-    total: 136
-    earned: 33
+    total: 153
+    earned: 29
     partial: 6
-    missed: 61
-    na: 36
+    missed: 76
+    na: 42
   checks:
+  - id: newsroom_present
+    status: missed
+  - id: leadership_present
+    status: missed
   - id: well_known_published
     status: missed
   - id: apis_json_self_hosted
+    status: missed
+  - id: contract_present
     status: missed
   - id: servers_resolvable
     status: missed
   - id: examples_present
     status: missed
   - id: asyncapi_present
-    status: missed
-  - id: graphql_descriptions
     status: missed
   - id: json_schema_present
     status: missed
@@ -94,6 +98,30 @@ kin_checks:
     status: missed
   - id: reg_write_surface
     status: missed
+  - id: reg_sbom
+    status: missed
+  - id: reg_support_lifetime
+    status: missed
+  - id: reg_accessibility_conformance
+    status: missed
+  - id: reg_global_privacy_control
+    status: missed
+  - id: reg_data_subject_request
+    status: missed
+  - id: reg_subprocessors
+    status: missed
+  - id: reg_data_residency
+    status: missed
+  - id: reg_incident_notification
+    status: missed
+  - id: reg_age_assurance
+    status: missed
+  - id: reg_notice_and_action
+    status: missed
+  - id: reg_transparency_report
+    status: missed
+  - id: reg_exit_assistance
+    status: missed
   - id: reg_mandate_verified
     status: missed
   - id: upsert_outcome_discriminator
@@ -103,6 +131,8 @@ kin_checks:
   - id: upsert_named
     status: missed
   - id: upsert_declared_conflict
+    status: missed
+  - id: spec_presence
     status: missed
   - id: agentic_access
     status: missed
@@ -156,8 +186,8 @@ kin_checks:
     detail: 'grade: bearer'
   - id: rate_limit_signal
     status: partial
-    earned: 3.5
-    detail: 'grade: documented'
+    earned: 0.88
+    detail: 'grade: derived'
   na:
   - asyncapi_3_x
   - channels_defined
@@ -167,8 +197,12 @@ kin_checks:
   - error_responses_documented
   - fhir_capability_statement
   - fhir_resource_coverage
+  - graphql_descriptions
+  - graphql_sdl_present
+  - graphql_type_depth
   - inbound_contract_published
   - info_complete
+  - mcp_endpoint_discoverable
   - messages_with_schema
   - oauth_flows_current
   - oauth_scopes_enumerated
@@ -183,11 +217,13 @@ kin_checks:
   - os_contribution_guide
   - os_releases
   - os_security_policy
+  - reg_ai_transparency
   - reg_camara_conformance
   - reg_certification_signal
   - reg_entitlement_terms
   - reg_pci_sca
   - reg_smart_configuration
+  - reg_training_data_summary
   - response_coverage
   - security_applied
   - security_schemes
