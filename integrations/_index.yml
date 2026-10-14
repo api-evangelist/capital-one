@@ -29,3 +29,15 @@
     detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
+- slug: capital-one-guesty-own
+  label: Guesty (own)
+  partner: guesty
+  partner_name: Guesty (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.guesty.com/marketplace-items/capital-one-by-hopper-homes-integration/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

@@ -6,6 +6,7 @@ source:
 - https://composio.dev/toolkits/capital-one
 - https://monid.ai/tools/capital-one
 checked:
+- guesty/integrations/guesty-integration-edges.yml
 - https://composio.dev/toolkits/capital-one
 - https://monid.ai/tools/capital-one
 - https://n8n.io/integrations/capital-one/
@@ -38,4 +39,20 @@ edges:
     detected: '2026-10-14'
   detected_by: sweep-fdx.py
   first_seen: '2026-10-14'
+- partner_name: Guesty (own)
+  partner: guesty
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.guesty.com/marketplace-items/capital-one-by-hopper-homes-integration/
+  mirror_of: guesty/integrations/guesty-integration-edges.yml
+  apps:
+  - Capital One
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
 templates: []
