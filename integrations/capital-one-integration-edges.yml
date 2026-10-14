@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/capital-one/integrations
 - https://n8n.io/integrations/capital-one/
@@ -9,8 +9,33 @@ checked:
 - https://composio.dev/toolkits/capital-one
 - https://monid.ai/tools/capital-one
 - https://n8n.io/integrations/capital-one/
+- https://registry.financialdataexchange.org/
 - https://zapier.com/apps/capital-one/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: FDX (Financial Data Exchange)
+  partner: fdx
+  type: contract
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://registry.financialdataexchange.org/
+  contract_reference:
+    register: FDX Registry
+    standard: FDX API
+    spec_file: null
+    register_api: https://registry.financialdataexchange.org/fdxregistryapi/organizations/search/listingTags
+    role: data-provider
+    member_type: MEMBER
+    registered_name: Capital One
+    register_id: 101
+    registered_website: https://www.capitalone.com
+    country: United States
+    fdx_version: null
+    matched_by: domain:capitalone.com
+    detected_by: sweep-fdx.py
+    detected: '2026-10-14'
+  detected_by: sweep-fdx.py
+  first_seen: '2026-10-14'
 templates: []
