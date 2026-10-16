@@ -1,27 +1,25 @@
-# Kin Score artifact — capital-one — 2026-09-06T211804
+# Kin Score artifact — capital-one — 2026-10-11T110117
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: capital-one
-  schema_version: 0.19.0
-  scored_at: '2026-09-06'
-  run_ts: 2026-09-06T211804
-  composite: 44.4
-  band: developing
+  schema_version: 0.23.0
+  scored_at: '2026-10-11'
+  run_ts: 2026-10-11T110117
+  composite: 33.5
+  band: thin
   facets:
-    discoverability: 81.5
-    contract_quality: 37.2
-    governance: 18.2
+    discoverability: 78.6
+    contract_quality: 0.0
+    contract_governance: 18.2
     operational_transparency: 18.4
     developer_ergonomics: 57.1
-    commercial_clarity: 40.8
-    contract_governance: 18.2
     access_clarity: 40.8
   agent_readiness:
-    score: 18.0
-    band: agent-aware
+    score: 3.1
+    band: human-only
     dimensions:
-      spec_presence: true
+      spec_presence: false
       agentic_access: false
       reversibility_documented: false
       mcp_server: false
@@ -29,7 +27,7 @@ kin_score:
       idempotency: false
       error_semantics: false
       openapi_examples: false
-      rate_limit_signal: documented
+      rate_limit_signal: derived
       event_surface_described: false
       agent_skills: false
       well_known_catalog: false
@@ -44,7 +42,7 @@ kin_score:
     applies: true
     regime: Banking & Open Finance
     regime_id: banking_open_finance
-    score: 49.4
+    score: 30.7
     matched_via: tags
   provenance:
     conformance: first-party
