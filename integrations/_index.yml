@@ -109,3 +109,72 @@
     detected: '2026-10-22'
   status: not-a-workflow
   arazzo: null
+- slug: capital-one-finos-projects-maintainer
+  label: FINOS projects (maintainer)
+  partner: finos
+  partner_name: FINOS projects (maintainer)
+  category: FINOS project maintainership
+  type: register
+  channel: standard-directory
+  evidence: https://github.com/finos/fluxnova-bpm-platform/blob/HEAD/MAINTAINERS.md
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FINOS project MAINTAINERS.md (github.com/finos/<repo>)
+    spec_file: null
+    standard: FINOS
+    role: finos-project-maintainer
+    registered_name: Capital One
+    registered_names:
+    - Capital One
+    matched_domain: capitalone.com
+    matched_by: domain
+    matched_via:
+    - member-homepage
+    api_families:
+    - Fluxnova
+    - Morphir
+    api_families_basis: MAINTAINERS.md (maintains, not implements)
+    finos_projects:
+    - project: Fluxnova
+      maturity: incubating
+      repos:
+      - https://github.com/finos/fluxnova-bpm-platform/blob/HEAD/MAINTAINERS.md
+    - project: Morphir
+      maturity: graduated
+      repos:
+      - https://github.com/finos/morphir-elm/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/morphir-examples/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/morphir-scala/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/morphir/blob/HEAD/MAINTAINERS.md
+    signal_note: maintainership of FINOS projects (maintains, not implements); per-edge signal = projects maintained
+      (api_families), never the maintainer count
+    detected_by: sweep-finos-open-source-fintech.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
+- slug: capital-one-finos-membership
+  label: FINOS (membership)
+  partner: finos
+  partner_name: FINOS (membership)
+  category: FINOS membership
+  type: register
+  channel: standard-directory
+  evidence: https://www.finos.org/members
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FINOS members (www.finos.org/members)
+    spec_file: null
+    standard: FINOS
+    role: finos-member
+    registered_name: Capital One
+    website: https://www.capitalone.com/
+    matched_domain: capitalone.com
+    matched_by: domain
+    signal_note: 'participation only: FINOS membership is standard-participant evidence, not depth. The tier (partner_tier)
+      is CONTEXT, never counted'
+    detected_by: sweep-finos-open-source-fintech.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
