@@ -338,17 +338,22 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: unknown
-  onboarding: partner-approval
+  pricing: enterprise
+  onboarding: self-serve
   trial: false
   try_now: false
   public: false
-  label: Partner-gated developer program
-  confidence: medium
+  gated: none
+  gated_source:
+  - onboarding
+  label: Enterprise · Self-serve signup
+  confidence: high
   source:
   - plans
   - authentication
-  generated: '2026-07-23'
+  - security
+  - sandbox
+  generated: '2026-11-02'
   method: derived
 position: Consuming
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/capital-one.png
