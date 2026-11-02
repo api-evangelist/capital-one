@@ -1,0 +1,80 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Capital One
+providerId: capital-one
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Auto Finance
+  - Authorizations
+  - Banking
+  - Credit Cards
+  - Credit Offers
+  - DevExchange
+  - Financial Services
+  - OAuth 2.0
+  - Payments
+  - Rewards
+description: Capital One DevExchange APIs are partner-gated banking APIs; access and pricing are negotiated
+  through partnership and merchant agreements. Capital One does not publish self-service API pricing.
+notes: No public pricing page found for the Capital One DevExchange API portfolio. APIs are accessed
+  by approved partners under bilateral commercial agreements; reconcile against partnership terms when
+  available.
+sources:
+  - https://developer.capitalone.com/
+plans:
+  - id: capital-one-partner
+    name: DevExchange Partner Access
+    type: enterprise
+    description: Partner-only access to Capital One DevExchange APIs (Account Lookup, Authorizations,
+      Credit Offers, Customer Transactions, Auto Financing Credit Application, etc.). Commercial terms
+      are negotiated bilaterally; not publicly priced.
+    entries:
+      - label: Partner agreement
+        name: partner_agreement
+        type: subscription
+        metric: contract
+        limit: -1
+        timeFrame: year
+        geo: US
+        unit: 1
+        price: contact partner team
+        userMultiplied: false
+    elements:
+      - name: Capital One Account Lookup API
+      - name: Capital One Authorizations API
+      - name: Capital One Credit Offers API
+      - name: Capital One Customer Transactions
+      - name: Capital One Digital Auto Financing Credit Application API
+      - name: Capital One Enhanced Decisioning Data API
+      - name: Capital One In-Store Credit Card Payments API
+      - name: Capital One POS Credit Card Application API
+      - name: Capital One Partner Account Summary API
+      - name: Capital One Pre-Application Orchestrator API
+      - name: Capital One Real-Time Proactive Prescreen API
+      - name: Capital One Retrieve Consumer Bank Products API
+      - name: Capital One Shop with Rewards API
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - negotiated
+  plans:
+  - name: DevExchange Partner Access
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - year
