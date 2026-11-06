@@ -353,7 +353,7 @@ accessModel:
   - authentication
   - security
   - sandbox
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   method: derived
 position: Consuming
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/capital-one.png
